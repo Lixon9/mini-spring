@@ -19,6 +19,11 @@ public class ApiTest {
         UserService userService = (UserService) defaultListableBeanFactory.getBean("userService");
         userService.queryUserInfo();
 
+        // 4 单例模式获取bean
+        UserService userService1 = (UserService) defaultListableBeanFactory.getSingleton("userService");
+        userService1.queryUserInfo();
+
+        System.out.println(userService1 == userService); // true
 
 
     }
