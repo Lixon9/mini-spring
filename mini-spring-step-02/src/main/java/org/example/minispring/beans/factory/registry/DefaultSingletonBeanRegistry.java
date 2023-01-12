@@ -1,6 +1,4 @@
-package org.example.minispring.beans.factory.support;
-
-import org.example.minispring.beans.factory.config.ISingletonBeanMaker;
+package org.example.minispring.beans.factory.registry;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,7 +6,7 @@ import java.util.Map;
 /**
  * @author lks
  */
-public class DefaultSingletonBeanRegistry implements ISingletonBeanMaker {
+public class DefaultSingletonBeanRegistry implements ISingletonBeanRegistry {
 
     private final Map<String,Object> singletonObjectsMap = new HashMap<>();
 

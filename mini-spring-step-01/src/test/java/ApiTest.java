@@ -1,5 +1,7 @@
-import org.example.beans.BeanDefinition;
-import org.example.beans.BeanFactory;
+
+import org.example.beans.factory.BeanDefinition;
+import org.example.beans.factory.BeanFactory;
+
 import org.junit.Test;
 
 public class ApiTest {

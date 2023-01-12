@@ -1,4 +1,4 @@
-package org.example.beans;
+package org.example.beans.factory;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
