@@ -21,7 +21,7 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
     protected BeanDefinition getBeanDefinition(String beanName) {
         BeanDefinition beanDefinition = stringBeanDefinitionMap.get(beanName);
         if (beanDefinition == null) {
-            throw new RuntimeException("这个bean"+beanName+"没有被定义");
+            throw new RuntimeException("这个"+beanName+"没有被注册，请先注册！");
         }
         return beanDefinition;
 
