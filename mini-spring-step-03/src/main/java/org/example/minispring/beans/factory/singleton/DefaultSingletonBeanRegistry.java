@@ -17,6 +17,7 @@ public class DefaultSingletonBeanRegistry implements ISingletonBeanRegistry{
 
     @Override
     public Object getSingleton(String beanName) {
+
         return map.get(beanName);
     }
 }

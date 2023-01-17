@@ -1,6 +1,6 @@
 import org.example.minispring.beans.factory.bean.BeanDefinition;
-import org.example.minispring.beans.factory.support.AbstractAutowireCapableBeanFactory;
 import org.example.minispring.beans.factory.support.DefaultListableBeanFactory;
+import org.example.minispring.beans.factory.support.UserService;
 import org.junit.Test;
 
 public class ApiTest {
