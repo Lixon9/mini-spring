@@ -43,7 +43,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
     }
     @Override
     protected Object createBean(String beanName, BeanDefinition beanDefinition, Object[] args) throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
-        Object bean = null;
+        Object bean;
         bean = createBeanInstance(beanDefinition, beanName, args);
         addSingleton(beanName,bean);
         return bean;
