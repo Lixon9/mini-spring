@@ -2,6 +2,7 @@ package org.example.minispring.beans.factory.instantiate;
 
 import org.example.minispring.beans.factory.bean.BeanDefinition;
 import org.example.minispring.beans.factory.exception.BeansException;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -38,7 +39,7 @@ public class SimpleInstantiationStrategyTest {
         final Constructor<?> constructor = null;
 
         // Run the test
-        assertThrows(BeansException.class,
+        Assert.assertThrows(BeansException.class,
                 () -> simpleInstantiationStrategyUnderTest.instantiate(beanDefinition, "beanName", constructor,
                         new Object[]{"args"}));
     }
