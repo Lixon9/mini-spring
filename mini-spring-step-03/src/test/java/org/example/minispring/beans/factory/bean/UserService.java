@@ -9,6 +9,19 @@ public class UserService {
     public UserService() {
     }
 
+    public UserService(String userName, String id) {
+        this.userName = userName;
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String id;
 
     @Override

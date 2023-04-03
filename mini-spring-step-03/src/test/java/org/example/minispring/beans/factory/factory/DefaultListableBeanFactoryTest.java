@@ -5,7 +5,9 @@ import org.example.minispring.beans.factory.bean.UserService;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Arrays;
 
 public class DefaultListableBeanFactoryTest {
 
@@ -38,7 +40,7 @@ public class DefaultListableBeanFactoryTest {
     }
 
     @Test
-    public void testRegisterBeanDefinition() {
+     public void testRegisterBeanDefinition() {
         // Setup
         final BeanDefinition beanDefinition = new BeanDefinition(String.class);
 
@@ -46,5 +48,29 @@ public class DefaultListableBeanFactoryTest {
         defaultListableBeanFactoryUnderTest.registerBeanDefinition("beanName", beanDefinition);
 
         // Verify the results
+    }
+
+    @Test
+    public void test_newInstance() throws InstantiationException, IllegalAccessException {
+
+        UserService userService = UserService.class.newInstance();
+        System.out.println(userService);
+
+    }
+
+    @Test
+    public void testConstructor() throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+        Class<UserService> userServiceClass = UserService.class;
+        Constructor<UserService> declaredConstructor = userServiceClass.getDeclaredConstructor(String.class,String.class);
+        Constructor<UserService> ctor = declaredConstructor;
+        Constructor<?>[] declaredConstructors = userServiceClass.getDeclaredConstructors();
+
+        System.out.println(Arrays.toString(declaredConstructors));
+        UserService userService = declaredConstructor.newInstance("张三","001");
+
+        System.out.println(userService);
+
+
+
     }
 }
